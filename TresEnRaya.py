@@ -198,6 +198,13 @@ class ComputerPlayer(TicTacToe):
 
 if __name__ =="__main__":
     # starting the game
-    turno_humano = int(input("¿Turno 1 o 2?:" ))
+    while True:
+        try:
+            turno_humano = int(input("¿Turno 1 o 2?:" ))
+            if turno_humano>2 or turno_humano<1:
+                raise Exception()
+            break
+        except Exception:
+            print("Ingresa un valor adecuado!")
     tic_tac_toe = TicTacToe()
     tic_tac_toe.start()
